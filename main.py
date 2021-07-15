@@ -2,7 +2,8 @@ import os
 import torch
 import torch.nn as nn
 import gc
-import data
+import dataset
+from torchtext.legacy import data
 import iterator
 from model import LSTM
 from train_test import run_train,evaluate
@@ -27,7 +28,7 @@ if __name__=='__main__':
     LABEL = data.Field(sequential=False, batch_first=True)
 
     fields = [('text', TEXT), ('labels', LABEL)]
-    trainset,validset,testset = data.get_data(path,fields,dev_size,seed)
+    trainset,validset,testset = dataset.get_data(path,fields,dev_size,seed)
 
     USE_CUDA = torch.cuda.is_available()
     DEVICE = torch.device("cuda" if USE_CUDA else "cpu")
