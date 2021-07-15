@@ -19,7 +19,6 @@ if __name__=='__main__':
     dropout_keep_prob = 0.5
     embedding_size = 500
     max_document_length = 500  # each sentence has until 100 words
-    max_size = 50000 # maximum vocabulary size
     seed = 5
     num_classes = 3
     dev_size = 0.8
