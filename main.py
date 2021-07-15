@@ -23,7 +23,7 @@ if __name__=='__main__':
     embedding_size = 500
     max_document_length = 500  # each sentence has until 100 words
     seed = 5
-    num_classes = 3
+    num_classes = 1 #ouput_dim
     dev_size = 0.8
 
     TEXT = data.Field(sequential=True, tokenize = word_tokenize, batch_first=True, lower=True,include_lengths=True,fix_length=max_document_length)
