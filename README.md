@@ -10,6 +10,7 @@ learning_rate, dropout, batch_size, hidden_nodes는 accuracy가 가장 높게 �
 
 ## Model
 LSTM
+
 Changed Tokenizer(nltk.word_tokenize) when build_vocab()
 ## Hyper Parameters
 lr = 1e-4
