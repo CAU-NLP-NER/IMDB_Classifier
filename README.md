@@ -14,8 +14,6 @@ embedding_size = 500
 
 max_document_length = 500  # each sentence has until 500 words
 
-max_size = 50000 # maximum vocabulary size
-
 seed = 5
 
 num_classes = 3
