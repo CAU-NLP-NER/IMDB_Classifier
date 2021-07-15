@@ -23,13 +23,13 @@ dev_size = 0.8
 
 num_hidden_nodes = 100
 
-hidden_dim2 = 128
+hidden_dim2 = 128 
 
-num_layers = 4  # LSTM layers
+num_layers = 4  # LSTM layers, 2개와 4개 테스팅을 했는데 성능에서 큰 차이가 없었습니다.
 
 bi_directional = False
 
-num_epochs = 10
+num_epochs = 10 # 7~9 정도의 epoch에서 보통 가장 높은 accuracy를 보였습니다.
 
 ### Optimizer
 Adam
