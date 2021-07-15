@@ -8,6 +8,9 @@ import iterator
 from model import LSTM
 from train_test import run_train,evaluate
 import sys
+import nltk
+nltk.download('punkt')
+from nltk import word_tokenize
 
 if __name__=='__main__':
     gc.collect()
@@ -23,8 +26,7 @@ if __name__=='__main__':
     num_classes = 3
     dev_size = 0.8
 
-    TEXT = data.Field(sequential=True, batch_first=True, lower=True, include_lengths=True,
-                      fix_length=max_document_length)
+    TEXT = data.Field(sequential=True, tokenize = word_tokenize, batch_first=True, lower=True,include_lengths=True,fix_length=max_document_length)
     LABEL = data.Field(sequential=False, batch_first=True)
 
     fields = [('text', TEXT), ('label', LABEL)]
