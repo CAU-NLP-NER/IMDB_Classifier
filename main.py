@@ -7,11 +7,12 @@ from torchtext.legacy import data
 import iterator
 from model import LSTM
 from train_test import run_train,evaluate
+import sys
 
 if __name__=='__main__':
     gc.collect()
     torch.cuda.empty_cache()
-    path = './data/'
+    path = sys.argv[1]
     # hyper-parameters:
     lr = 1e-4
     batch_size = 64
@@ -27,7 +28,7 @@ if __name__=='__main__':
                       fix_length=max_document_length)
     LABEL = data.Field(sequential=False, batch_first=True)
 
-    fields = [('text', TEXT), ('labels', LABEL)]
+    fields = [('text', TEXT), ('label', LABEL)]
     trainset,validset,testset = dataset.get_data(path,fields,dev_size,seed)
 
     USE_CUDA = torch.cuda.is_available()

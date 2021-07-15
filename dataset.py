@@ -1,4 +1,5 @@
 from torchtext.legacy import data
+import random
 
 def get_data(path,fields,dev_size,seed):
     trainset, testset = data.TabularDataset.splits(
