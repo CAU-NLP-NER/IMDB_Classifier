@@ -27,6 +27,7 @@ if __name__=='__main__':
     N_LAYERS = 2
     BIDIRECTIONAL = True
     DROPOUT = 0.25
+    seed = 0
     
     USE_CUDA = torch.cuda.is_available()
     DEVICE = torch.device("cuda" if USE_CUDA else "cpu")
@@ -38,7 +39,6 @@ if __name__=='__main__':
     eos_token_idx = tokenizer.sep_token_id
     pad_token_idx = tokenizer.pad_token_id
     unk_token_idx = tokenizer.unk_token_id
-    max_input_length = tokenizer.max_model_input_sizes['bert-base-uncased']
 
     TEXT = data.Field(use_vocab=False, tokenize = tf_preprocess.tokenize_and_cut, 
                   batch_first=True, 
