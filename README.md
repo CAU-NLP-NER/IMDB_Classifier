@@ -1,3 +1,13 @@
+# IMDB_Classifier_Transformer
+
+tf_##.py로 transformer model 적용한 모듈들 업로드했습니다.
+모델과 tokenizer는 huggingface의 from_pretrained('bert-base-uncased') 사용하였습니다.
+
+train, test도 모델에 맞게 일부 수정을 해주었고, 구체적인 모델은 tf_Transformer.py에 있습니다.
+
+accuracy는 93~94%로 기존 코드보다 6~7% 정도 높아졌습니다.
+
+
 # IMDB_Classifier
 
 module화, 필요없는 코드들 제거하였습니다.
